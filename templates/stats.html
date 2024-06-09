@@ -5,16 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deni Avdija Stats</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("{{ url_for('static', filename='basketball_background.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Deni Avdija - {{ stats.season }} Season Stats</h1>
-        <ul>
-            <li>Games Played: {{ stats.games_played }}</li>
-            <li>Points Per Game: {{ stats.points_per_game }}</li>
-            <li>Rebounds Per Game: {{ stats.rebounds_per_game }}</li>
-            <li>Assists Per Game: {{ stats.assists_per_game }}</li>
-        </ul>
+        <h1>Deni Avdija - {{ stats['season'] }} Season Stats</h1>
+        <p>Games Played: {{ stats['games_played'] }}</p>
+        <p>Points Per Game: {{ stats['points_per_game'] }}</p>
+        <p>Rebounds Per Game: {{ stats['rebounds_per_game'] }}</p>
+        <p>Assists Per Game: {{ stats['assists_per_game'] }}</p>
+        <p>Field Goal Percentage: {{ stats['field_goal_percentage'] }}%</p>
+        <p>Three Point Percentage: {{ stats['three_point_percentage'] }}%</p>
+        <p>Free Throw Percentage: {{ stats['free_throw_percentage'] }}%</p>
         <p><a href="{{ url_for('home') }}">Back to Home</a></p>
     </div>
 </body>

@@ -5,8 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deni Avdija Stats</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("{{ url_for('static', filename='basketball_background.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .audio-controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
+    <div class="audio-controls">
+        <audio controls autoplay loop volume="0.5">
+            <source src="{{ url_for('static', filename='background_music.mp3') }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
     <div class="container">
         <h1>Welcome to Deni Avdija Stats Dashboard</h1>
         <img src="{{ url_for('static', filename='deni_avdija.jpg') }}" alt="Deni Avdija">
