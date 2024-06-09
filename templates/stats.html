@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deni Avdija Stats</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Deni Avdija - {{ stats.season }} Season Stats</h1>
+        <ul>
+            <li>Games Played: {{ stats.games_played }}</li>
+            <li>Points Per Game: {{ stats.points_per_game }}</li>
+            <li>Rebounds Per Game: {{ stats.rebounds_per_game }}</li>
+            <li>Assists Per Game: {{ stats.assists_per_game }}</li>
+        </ul>
+        <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+    </div>
+</body>
+</html>
