@@ -17,3 +17,6 @@ def stats():
         'assists_per_game': 3.1
     }
     return render_template('stats.html', stats=stats_data)
+
+if __name__ == '__main__':
+    app.run(debug=True)
