@@ -1,7 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from nba_api.stats.static import players
 from nba_api.stats.endpoints import playercareerstats
-import pandas as pd
 
 
 app = Flask(__name__)
@@ -11,9 +10,11 @@ player_dict = players.get_players()
 deni_avdija = [player for player in player_dict if player['full_name'] == 'Deni Avdija'][0]
 deni_avdija_id = deni_avdija['id']
 
+
 @app.route('/')
 def home():
     return render_template('home.html')
+
 
 @app.route('/stats')
 def stats():
