@@ -1,4 +1,3 @@
-Sure, here's a well-structured and visually engaging `README.md` file for your project. It includes emojis, headlines, and detailed sections to make it appealing and informative.
 
 ```markdown
 # 🏀 Deni Avdija Stats Dashboard
