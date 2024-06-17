@@ -2,7 +2,6 @@ from flask import Flask, render_template
 from nba_api.stats.static import players
 from nba_api.stats.endpoints import playercareerstats
 
-
 app = Flask(__name__)
 
 # Fetching Deni data
@@ -10,11 +9,9 @@ player_dict = players.get_players()
 deni_avdija = [player for player in player_dict if player['full_name'] == 'Deni Avdija'][0]
 deni_avdija_id = deni_avdija['id']
 
-
 @app.route('/')
 def home():
     return render_template('home.html')
-
 
 @app.route('/stats')
 def stats():
@@ -37,6 +34,10 @@ def stats():
     }
 
     return render_template('stats.html', stats=stats_data)
+
+@app.route('/video')
+def video():
+    return render_template('video.html')
 
 
 if __name__ == '__main__':
